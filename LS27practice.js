@@ -166,7 +166,23 @@ function f() {
         var temp = "Hi!";
     }
 }
-f();
+f();//undefined
+
+var temp = new Date();
+function f() {
+    console.log(temp);
+    if(false){
+        let temp = "Hi!";
+    }
+}
+f();//显示当前时间
+
+var temp = new Date();
+function f() {
+    console.log(temp);
+        let temp = "Hi!";
+}
+f();//报错，有let，会把这个变量锁死在这个区域，不会再往上个区域找
 
 //let和const不存在变量提升
 console.log(a);//报错
